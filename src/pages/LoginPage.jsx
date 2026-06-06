@@ -43,7 +43,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md mx-4 animate-fadeInUp">
         <div className="bg-white rounded-2xl shadow-xl border border-tdc-gold-100 overflow-hidden">
           <div className="tdc-gradient p-6 text-center">
-            <div className="text-tdc-gold-400 text-4xl mb-2">🤝</div>
+            <div className="text-tdc-gold-400 text-4xl mb-2">❤️</div>
             <h1
               className="text-2xl font-bold text-white"
               style={{ letterSpacing: '-0.02em' }}

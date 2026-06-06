@@ -37,7 +37,7 @@ export default function DashboardLayout() {
               className="text-xl font-bold text-white flex items-center gap-2 hover:opacity-90 transition-opacity"
               style={{ letterSpacing: '-0.02em' }}
             >
-              <span className="text-tdc-gold-400">🤝</span>
+              <span className="text-tdc-gold-400">❤️</span>
               <span>
                 TDC <span className="gold-text">Matchmaker</span>
               </span>
