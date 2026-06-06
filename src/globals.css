@@ -1,0 +1,191 @@
+/* ===================================================
+   TDC Matchmaker Dashboard — Global Styles
+   Brand palette: The Date Crew (dark green + gold)
+   Font: Inter (body) + Playfair Display (optional accents)
+   =================================================== */
+
+/* Tailwind v4 base import */
+@import "tailwindcss";
+
+/* ---- TDC Brand Color Tokens ---- */
+@theme {
+  --font-sans: Inter, Arial, sans-serif;
+
+  /* Green family — primary brand color */
+  --color-tdc-green: #065f4e;
+  --color-tdc-green-50: #e8f2f0;
+  --color-tdc-green-100: #cee2de;
+  --color-tdc-green-200: #b3d3cc;
+  --color-tdc-green-300: #98c3ba;
+  --color-tdc-green-400: #82afa6;
+  --color-tdc-green-500: #5ea093;
+  --color-tdc-green-600: #4b8075;
+  --color-tdc-green-700: #386058;
+  --color-tdc-green-800: #253f3a;
+  --color-tdc-green-900: #1b302b;
+  --color-tdc-green-950: #11201d;
+
+  /* Gold family — accent/highlight color */
+  --color-tdc-gold: #dc9e4a;
+  --color-tdc-gold-50: #fff9f1;
+  --color-tdc-gold-100: #f9efe1;
+  --color-tdc-gold-200: #ebc796;
+  --color-tdc-gold-300: #e4b370;
+  --color-tdc-gold-400: #dc9e4a;
+  --color-tdc-gold-500: #d28a28;
+  --color-tdc-gold-600: #ba771c;
+  --color-tdc-gold-700: #ac7121;
+  --color-tdc-gold-800: #7d5115;
+  --color-tdc-gold-900: #633e0c;
+  --color-tdc-gold-950: #412806;
+}
+
+/* ---- CSS Custom Properties ---- */
+:root {
+  --background: #ffffff;
+  --foreground: #1a1714;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* ---- Utility Classes ---- */
+
+/* Dark green gradient (used for header, buttons) */
+.tdc-gradient {
+  background: linear-gradient(145deg, #1b302b, #11201d);
+}
+
+/* Gold gradient accent */
+.tdc-gradient-gold {
+  background: linear-gradient(120deg, #7d5115, #dc9e4a);
+}
+
+/* Pill-shaped primary button with inset shadow (TDC signature style) */
+.tdc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 22px 8px 22px;
+  background: linear-gradient(145deg, #1b302b, #11201d);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 999px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 1px 1px 0px rgba(37, 37, 39, 0.15),
+    inset 0px 1px 2px 2px #386058;
+  transition: opacity 0.2s;
+}
+
+.tdc-btn:hover {
+  opacity: 0.9;
+}
+
+.tdc-btn-sm {
+  padding: 6px 16px 6px 16px;
+  font-size: 13px;
+  gap: 6px;
+}
+
+/* Outline variant (used for secondary actions) */
+.tdc-btn-outline {
+  background: transparent;
+  color: #1b302b;
+  border: 1px solid #d6d3d1;
+  box-shadow: none;
+}
+
+.tdc-btn-outline:hover {
+  background: #f5f5f4;
+}
+
+/* Premium card with subtle border and hover effect */
+.tdc-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e7e5e4;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.tdc-card:hover {
+  border-color: #dc9e4a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Section title with tight letter-spacing */
+.tdc-section-title {
+  font-weight: 600;
+  color: #1a1714;
+  letter-spacing: -0.02em;
+}
+
+/* Gold gradient text (TDC signature style for headings/accents) */
+.gold-text {
+  background: linear-gradient(120deg, #7d5115, #dc9e4a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---- Animation Keyframes ---- */
+
+/* Fade in from below with slight upward slide */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Simple fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Subtle scale pulse (for confirmation feedback) */
+@keyframes pulse-once {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.35s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out;
+}
+
+.animate-pulse-once {
+  animation: pulse-once 0.3s ease-out;
+}
+
+/* ---- Scrollbar Styling ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a29e;
+}
