@@ -1,11 +1,3 @@
-/**
- * Card displaying a single match result with score badge,
- * key reasons, and action buttons (View Profile / Send Match).
- *
- * @param {Object} match - The match result object { profile, score, reasons }.
- * @param {Function} onSendMatch - Callback when "Send Match" is clicked.
- * @param {Function} onViewProfile - Callback when "View Profile" or avatar is clicked.
- */
 import { generateScoreLabel } from '@/lib/ai';
 import Avatar from './Avatar';
 

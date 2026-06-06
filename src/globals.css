@@ -1,17 +1,14 @@
 /* ===================================================
    TDC Matchmaker Dashboard — Global Styles
    Brand palette: The Date Crew (dark green + gold)
-   Font: Inter (body) + Playfair Display (optional accents)
+   with heart animations
    =================================================== */
 
-/* Tailwind v4 base import */
 @import "tailwindcss";
 
-/* ---- TDC Brand Color Tokens ---- */
 @theme {
   --font-sans: Inter, Arial, sans-serif;
 
-  /* Green family — primary brand color */
   --color-tdc-green: #065f4e;
   --color-tdc-green-50: #e8f2f0;
   --color-tdc-green-100: #cee2de;
@@ -25,7 +22,6 @@
   --color-tdc-green-900: #1b302b;
   --color-tdc-green-950: #11201d;
 
-  /* Gold family — accent/highlight color */
   --color-tdc-gold: #dc9e4a;
   --color-tdc-gold-50: #fff9f1;
   --color-tdc-gold-100: #f9efe1;
@@ -40,7 +36,6 @@
   --color-tdc-gold-950: #412806;
 }
 
-/* ---- CSS Custom Properties ---- */
 :root {
   --background: #ffffff;
   --foreground: #1a1714;
@@ -52,19 +47,14 @@ body {
   font-family: Inter, Arial, sans-serif;
 }
 
-/* ---- Utility Classes ---- */
-
-/* Dark green gradient (used for header, buttons) */
 .tdc-gradient {
   background: linear-gradient(145deg, #1b302b, #11201d);
 }
 
-/* Gold gradient accent */
 .tdc-gradient-gold {
   background: linear-gradient(120deg, #7d5115, #dc9e4a);
 }
 
-/* Pill-shaped primary button with inset shadow (TDC signature style) */
 .tdc-btn {
   display: inline-flex;
   align-items: center;
@@ -93,7 +83,6 @@ body {
   gap: 6px;
 }
 
-/* Outline variant (used for secondary actions) */
 .tdc-btn-outline {
   background: transparent;
   color: #1b302b;
@@ -105,7 +94,6 @@ body {
   background: #f5f5f4;
 }
 
-/* Premium card with subtle border and hover effect */
 .tdc-card {
   background: white;
   border-radius: 12px;
@@ -118,14 +106,12 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Section title with tight letter-spacing */
 .tdc-section-title {
   font-weight: 600;
   color: #1a1714;
   letter-spacing: -0.02em;
 }
 
-/* Gold gradient text (TDC signature style for headings/accents) */
 .gold-text {
   background: linear-gradient(120deg, #7d5115, #dc9e4a);
   -webkit-background-clip: text;
@@ -133,31 +119,44 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* ---- Animation Keyframes ---- */
+/* ---- Heart Animations ---- */
 
-/* Fade in from below with slight upward slide */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes floatHeart {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-10px) scale(1.15); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 0.6; }
 }
 
-/* Simple fade in */
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.12); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* Subtle scale pulse (for confirmation feedback) */
 @keyframes pulse-once {
   0% { transform: scale(1); }
   50% { transform: scale(1.03); }
   100% { transform: scale(1); }
+}
+
+.animate-floatHeart {
+  animation: floatHeart 2.5s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.8s ease-in-out infinite;
 }
 
 .animate-fadeInUp {
@@ -172,20 +171,26 @@ body {
   animation: pulse-once 0.3s ease-out;
 }
 
-/* ---- Scrollbar Styling ---- */
-::-webkit-scrollbar {
-  width: 6px;
+.hearts-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+.hearts-bg span {
+  position: absolute;
+  display: block;
+  font-size: 20px;
+  animation: floatHeart 3s ease-in-out infinite;
+  opacity: 0.15;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #d6d3d1;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a8a29e;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a8a29e; }

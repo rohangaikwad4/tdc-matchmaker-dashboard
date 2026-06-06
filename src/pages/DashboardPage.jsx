@@ -154,7 +154,7 @@ export default function DashboardPage() {
           <p className="text-xs text-gray-500 uppercase tracking-wider font-medium">
             Total Customers
           </p>
-          <p className="text-2xl font-bold text-tdc-green-900 mt-1">
+          <p className="text-2xl font-bold text-tdc-green-700 mt-1">
             {stats.total}
           </p>
         </div>
@@ -165,7 +165,7 @@ export default function DashboardPage() {
           <p className="text-xs text-gray-500 uppercase tracking-wider font-medium">
             Matches Sent
           </p>
-          <p className="text-2xl font-bold text-tdc-gold-600 mt-1">
+          <p className="text-2xl font-bold text-tdc-gold-500 mt-1">
             {stats.sentCount}
           </p>
         </div>
@@ -176,7 +176,7 @@ export default function DashboardPage() {
           <p className="text-xs text-gray-500 uppercase tracking-wider font-medium">
             Active Discussions
           </p>
-          <p className="text-2xl font-bold text-tdc-green-600 mt-1">
+          <p className="text-2xl font-bold text-tdc-green-500 mt-1">
             {stats.activeDiscussions}
           </p>
         </div>
@@ -197,7 +197,7 @@ export default function DashboardPage() {
       <div>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h1 className="text-2xl font-bold text-tdc-green-900 tdc-section-title">
+            <h1 className="text-2xl font-bold text-tdc-green-700 tdc-section-title">
               My Customers
             </h1>
             <p className="text-sm text-gray-500 mt-1">

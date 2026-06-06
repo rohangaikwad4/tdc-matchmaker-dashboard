@@ -1,15 +1,3 @@
-/**
- * Reusable confirmation modal with overlay, title, content slot, and action buttons.
- * Animates in with a fade + scale transition for a premium feel.
- *
- * @param {boolean} open - Whether the modal is visible.
- * @param {Function} onClose - Called when dismissing the modal.
- * @param {Function} onConfirm - Called when confirming the action.
- * @param {string} title - Modal header title.
- * @param {ReactNode} children - Modal body content.
- * @param {string} confirmText - Label for the confirm button.
- * @param {string} cancelText - Label for the cancel button.
- */
 export default function ConfirmModal({
   open,
   onClose,
@@ -28,7 +16,7 @@ export default function ConfirmModal({
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl animate-fadeInUp">
+      <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl animate-fadeInUp border border-tdc-gold-200">
         <div className="p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-bold text-gray-900">{title}</h3>

@@ -1,8 +1,3 @@
-/**
- * Login page — authenticates matchmakers against hardcoded credentials
- * and localStorage-registered users. Redirects to /dashboard on success.
- * Styled with TDC brand gradient header and pill-button CTA.
- */
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import matchmakers from '@/data/matchmakers';
@@ -35,15 +30,28 @@ export default function LoginPage() {
 
   return (
     <div
-      className="flex flex-1 items-center justify-center min-h-screen"
+      className="flex flex-1 items-center justify-center min-h-screen relative overflow-hidden"
       style={{
         background: 'linear-gradient(140deg, #e8f2f0 0%, #f9efe1 100%)',
       }}
     >
-      <div className="w-full max-w-md mx-4 animate-fadeInUp">
-        <div className="bg-white rounded-2xl shadow-xl border border-tdc-gold-100 overflow-hidden">
-          <div className="tdc-gradient p-6 text-center">
-            <div className="text-tdc-gold-400 text-4xl mb-2">❤️</div>
+      <div className="hearts-bg">
+        <span style={{ top: '10%', left: '5%', animationDelay: '0s' }}>🤍</span>
+        <span style={{ top: '20%', right: '10%', animationDelay: '0.5s' }}>🤍</span>
+        <span style={{ top: '50%', left: '8%', animationDelay: '1s' }}>🤍</span>
+        <span style={{ top: '70%', right: '5%', animationDelay: '1.5s' }}>🤍</span>
+        <span style={{ top: '85%', left: '15%', animationDelay: '2s' }}>🤍</span>
+        <span style={{ top: '30%', right: '3%', animationDelay: '0.8s' }}>🤍</span>
+      </div>
+
+      <div className="w-full max-w-md mx-4 animate-fadeInUp relative z-10">
+        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-tdc-gold-200 overflow-hidden">
+          <div className="tdc-gradient p-6 text-center relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <span className="absolute top-2 left-4 animate-floatHeart">🤍</span>
+              <span className="absolute top-4 right-6 animate-heartbeat" style={{ animationDelay: '0.5s' }}>🤍</span>
+            </div>
+            <div className="text-tdc-gold-400 text-4xl mb-2 animate-heartbeat">🤍</div>
             <h1
               className="text-2xl font-bold text-white"
               style={{ letterSpacing: '-0.02em' }}
@@ -64,7 +72,7 @@ export default function LoginPage() {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tdc-gold-400 focus:border-tdc-gold-400 outline-none transition-all"
+                className="w-full px-4 py-2.5 border border-tdc-green-200 rounded-lg focus:ring-2 focus:ring-tdc-gold-400 focus:border-tdc-gold-400 outline-none transition-all"
                 placeholder="Enter username"
                 required
                 autoFocus
@@ -79,7 +87,7 @@ export default function LoginPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tdc-gold-400 focus:border-tdc-gold-400 outline-none transition-all"
+                className="w-full px-4 py-2.5 border border-tdc-green-200 rounded-lg focus:ring-2 focus:ring-tdc-gold-400 focus:border-tdc-gold-400 outline-none transition-all"
                 placeholder="Enter password"
                 required
               />

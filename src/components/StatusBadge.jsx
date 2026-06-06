@@ -1,24 +1,9 @@
-/**
- * Status badge component for matchmaker workflow states.
- * Color-coded with TDC palette and contextual emoji icons.
- *
- * Status flow: new → profile_verified → matches_reviewed → meeting_scheduled
- *              → active_discussion → closed
- *
- * @param {string} status - Current workflow status key.
- * @param {'sm'|'lg'} size - Badge size variant.
- */
-
 const statusStyles = {
   new: 'bg-tdc-green-100 text-tdc-green-800 border-tdc-green-200',
-  profile_verified:
-    'bg-tdc-green-50 text-tdc-green-700 border-tdc-green-200',
-  matches_reviewed:
-    'bg-tdc-gold-100 text-tdc-gold-800 border-tdc-gold-200',
-  meeting_scheduled:
-    'bg-tdc-gold-100 text-tdc-gold-700 border-tdc-gold-200',
-  active_discussion:
-    'bg-tdc-green-50 text-tdc-green-800 border-tdc-green-200',
+  profile_verified: 'bg-tdc-green-50 text-tdc-green-700 border-tdc-green-200',
+  matches_reviewed: 'bg-tdc-gold-100 text-tdc-gold-800 border-tdc-gold-200',
+  meeting_scheduled: 'bg-tdc-gold-100 text-tdc-gold-700 border-tdc-gold-200',
+  active_discussion: 'bg-tdc-green-50 text-tdc-green-800 border-tdc-green-200',
   closed: 'bg-gray-100 text-gray-800 border-gray-200',
 };
 

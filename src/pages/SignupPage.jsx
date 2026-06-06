@@ -1,8 +1,3 @@
-/**
- * Signup page — registers a new matchmaker and persists to localStorage.
- * Validates unique username and minimum password length (4 chars).
- * Auto-logs in and redirects to /dashboard after registration.
- */
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import matchmakers from '@/data/matchmakers';
@@ -49,15 +44,27 @@ export default function SignupPage() {
 
   return (
     <div
-      className="flex flex-1 items-center justify-center min-h-screen"
+      className="flex flex-1 items-center justify-center min-h-screen relative overflow-hidden"
       style={{
         background: 'linear-gradient(140deg, #e8f2f0 0%, #f9efe1 100%)',
       }}
     >
-      <div className="w-full max-w-md mx-4 animate-fadeInUp">
-        <div className="bg-white rounded-2xl shadow-xl border border-tdc-gold-100 overflow-hidden">
-          <div className="tdc-gradient p-6 text-center">
-            <div className="text-tdc-gold-400 text-4xl mb-2">❤️</div>
+      <div className="hearts-bg">
+        <span style={{ top: '15%', left: '8%', animationDelay: '0.2s' }}>🤍</span>
+        <span style={{ top: '30%', right: '12%', animationDelay: '0.7s' }}>🤍</span>
+        <span style={{ top: '60%', left: '5%', animationDelay: '1.2s' }}>🤍</span>
+        <span style={{ top: '75%', right: '8%', animationDelay: '1.8s' }}>🤍</span>
+        <span style={{ top: '90%', left: '20%', animationDelay: '2.2s' }}>🤍</span>
+      </div>
+
+      <div className="w-full max-w-md mx-4 animate-fadeInUp relative z-10">
+        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-tdc-gold-200 overflow-hidden">
+          <div className="tdc-gradient p-6 text-center relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <span className="absolute top-2 right-4 animate-floatHeart" style={{ animationDelay: '0.3s' }}>🤍</span>
+              <span className="absolute top-4 left-6 animate-heartbeat">🤍</span>
+            </div>
+            <div className="text-tdc-gold-400 text-4xl mb-2 animate-heartbeat">🤍</div>
             <h1
               className="text-2xl font-bold text-white"
               style={{ letterSpacing: '-0.02em' }}
@@ -78,7 +85,7 @@ export default function SignupPage() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tdc-gold-400 focus:border-tdc-gold-400 outline-none transition-all"
+                className="w-full px-4 py-2.5 border border-tdc-green-200 rounded-lg focus:ring-2 focus:ring-tdc-gold-400 focus:border-tdc-gold-400 outline-none transition-all"
                 placeholder="Enter your name"
                 required
                 autoFocus
@@ -93,7 +100,7 @@ export default function SignupPage() {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tdc-gold-400 focus:border-tdc-gold-400 outline-none transition-all"
+                className="w-full px-4 py-2.5 border border-tdc-green-200 rounded-lg focus:ring-2 focus:ring-tdc-gold-400 focus:border-tdc-gold-400 outline-none transition-all"
                 placeholder="Choose a username"
                 required
               />
@@ -107,7 +114,7 @@ export default function SignupPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tdc-gold-400 focus:border-tdc-gold-400 outline-none transition-all"
+                className="w-full px-4 py-2.5 border border-tdc-green-200 rounded-lg focus:ring-2 focus:ring-tdc-gold-400 focus:border-tdc-gold-400 outline-none transition-all"
                 placeholder="Choose a password (min 4 characters)"
                 required
                 minLength={4}
